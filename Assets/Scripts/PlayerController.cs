@@ -187,6 +187,7 @@ public class PlayerController : MonoBehaviour
     public void SetTransformSkeleton(bool value)
     {
         isSkeleton = value;
+        skeletonTimeCount = skeletonTime;
     }
 
     public bool GetTransformSkeleton()

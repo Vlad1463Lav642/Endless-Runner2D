@@ -97,6 +97,7 @@ MonoBehaviour:
   moveSpeed: 10
   speedForcer: 1.05
   speedIncreaseMilestone: 50
+  wildForce: 3
   skeletonTime: 15
   jumpForce: 12
   jumpTime: 0.25
