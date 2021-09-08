@@ -420,6 +420,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5852730912194570603}
   - component: {fileID: 5852730912194570602}
+  - component: {fileID: -5819481720426671628}
   - component: {fileID: 2056575311723141996}
   m_Layer: 6
   m_Name: StonePlatform8x1
@@ -476,6 +477,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 12.780893, y: 1.6104672}
   m_EdgeRadius: 0
+--- !u!114 &-5819481720426671628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5852730912194570601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 335ff37239101481495ca03f3e3b44f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2056575311723141996
 MonoBehaviour:
   m_ObjectHideFlags: 0

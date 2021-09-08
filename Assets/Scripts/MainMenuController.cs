@@ -9,14 +9,20 @@ public class MainMenuController : MonoBehaviour
 
     private void Awake()
     {
-        Cursor.SetCursor(cursorTexture,Vector2.zero,CursorMode.ForceSoftware);
+        //Cursor.SetCursor(cursorTexture,Vector2.zero,CursorMode.ForceSoftware);
     }
 
     [SerializeField] private string playGameLevel;
+    [SerializeField] private string settings;
 
     public void PlayGame()
     {
         SceneManager.LoadScene(playGameLevel);
+    }
+
+    public void SettingsGame()
+    {
+        SceneManager.LoadScene(settings);
     }
 
     public void QuitGame()
