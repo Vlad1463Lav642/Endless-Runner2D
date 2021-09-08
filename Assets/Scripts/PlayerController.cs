@@ -16,6 +16,11 @@ public class PlayerController : MonoBehaviour
     private Sprite defaultPlayerSprite;
     private RuntimeAnimatorController defaultPlayerAnimator;
 
+    private WildIndicator wildIndicator;
+    [SerializeField] private float wildForce;
+    private bool wildSingle;
+    private float wildMoveSpeed;
+
     private Vector2 currentPlayerPosition;
 
     private bool isSkeleton;
@@ -35,7 +40,6 @@ public class PlayerController : MonoBehaviour
     private bool canDoubleJump;
 
     [SerializeField] private bool isGround;
-    //[SerializeField] private bool isJumped;
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private Transform groundChecker;
     [SerializeField] private float groundCheckerRadius;
@@ -57,16 +61,33 @@ public class PlayerController : MonoBehaviour
         speedMilestoneCountStore = speedMilestoneCount;
         speedIncreaseMilestoneStore = speedIncreaseMilestone;
         stoppedJumping = true;
-        //isJumped = false;
         isSkeleton = false;
         skeletonTimeCount = skeletonTime;
         defaultPlayerSprite = gameObject.GetComponentInChildren<SpriteRenderer>().sprite;
         defaultPlayerAnimator = gameObject.GetComponentInChildren<Animator>().runtimeAnimatorController;
         liveManager = FindObjectOfType<LiveManager>();
+        wildIndicator = FindObjectOfType<WildIndicator>();
+        wildMoveSpeed = moveSpeed;
     }
 
     private void Update()
     {
+        if(wildIndicator.GetWildRotate() && !wildSingle)
+        {
+            moveSpeed = wildMoveSpeed;
+            moveSpeed += wildForce;
+            wildSingle = true;
+        }
+        else
+        {
+            if(!wildIndicator.GetWildRotate() && !wildSingle)
+            {
+                moveSpeed = wildMoveSpeed;
+                moveSpeed -= wildForce;
+                wildSingle = true;
+            }
+        }
+
         isGround = Physics2D.OverlapCircle(groundChecker.position, groundCheckerRadius, groundMask);
 
         if(transform.position.x > speedMilestoneCount)
@@ -74,6 +95,7 @@ public class PlayerController : MonoBehaviour
             speedMilestoneCount += speedIncreaseMilestone;
             speedIncreaseMilestone *= speedForcer;
             moveSpeed *= speedForcer;
+            wildMoveSpeed *= speedForcer;
         }
 
         playerRigidbody.velocity = new Vector2(moveSpeed, playerRigidbody.velocity.y);
@@ -85,7 +107,6 @@ public class PlayerController : MonoBehaviour
                 playerRigidbody.velocity = new Vector2(playerRigidbody.velocity.x, jumpForce);
                 stoppedJumping = false;
                 currentPlayerPosition = gameObject.transform.position;
-                //isJumped = true;
             }
 
             if(!isGround && canDoubleJump)
@@ -95,7 +116,6 @@ public class PlayerController : MonoBehaviour
                 jumpTimeCount = jumpTime;
                 stoppedJumping = false;
                 canDoubleJump = false;
-                //isJumped = true;
             }
         }
 
@@ -118,12 +138,10 @@ public class PlayerController : MonoBehaviour
         {
             jumpTimeCount = jumpTime;
             canDoubleJump = true;
-            //isJumped = false;
         }
 
         playerAnimator.SetFloat("Speed", playerRigidbody.velocity.x);
         playerAnimator.SetBool("IsGrounded", isGround);
-        //playerAnimator.SetBool("IsJumped", isJumped);
 
         if (isSkeleton)
         {
@@ -169,10 +187,16 @@ public class PlayerController : MonoBehaviour
     public void SetTransformSkeleton(bool value)
     {
         isSkeleton = value;
+        skeletonTimeCount = skeletonTime;
     }
 
     public bool GetTransformSkeleton()
     {
         return isSkeleton;
+    }
+
+    public void RunWild()
+    {
+        wildSingle = false;
     }
 }
