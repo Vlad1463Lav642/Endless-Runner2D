@@ -1254,9 +1254,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   generationPoint: {fileID: 673265062}
-  distanceToPlatform: 5
-  distanceToPlatformMin: 3
-  distanceToPlatformMax: 10
+  distanceToPlatform: 8
+  distanceToPlatformMin: 4
+  distanceToPlatformMax: 12
   pooledGameObjects:
   - {fileID: 1742160524}
   - {fileID: 478798124}
@@ -1553,7 +1553,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7998017127691160154, guid: 6ce1aff3fb26b4dd2bb2df81eab1552d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -38.11837
       objectReference: {fileID: 0}
     - target: {fileID: 7998017127691160154, guid: 6ce1aff3fb26b4dd2bb2df81eab1552d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1643,7 +1643,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7998017127691160154, guid: 6ce1aff3fb26b4dd2bb2df81eab1552d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -38.11837
       objectReference: {fileID: 0}
     - target: {fileID: 7998017127691160154, guid: 6ce1aff3fb26b4dd2bb2df81eab1552d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2860,6 +2860,7 @@ MonoBehaviour:
   arrowRight: {fileID: 21300140, guid: 1e627bcafe9e32d40ad554880f36b5eb, type: 3}
   arrowObject: {fileID: 927384122}
   wildTimer: 20
+  wildRandomNumber: 5
 --- !u!1 &1606486441
 GameObject:
   m_ObjectHideFlags: 0

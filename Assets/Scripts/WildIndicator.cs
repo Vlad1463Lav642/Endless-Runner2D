@@ -14,13 +14,21 @@ public class WildIndicator : MonoBehaviour
 
     private PlayerController player;
 
+    [SerializeField] private float wildRandomNumber;
+
     private bool wildRotation;
 
     private void Start()
     {
-        wildRotation = true;
         player = FindObjectOfType<PlayerController>();
         wildTimerCount = wildTimer;
+
+        wildRotation = true;
+
+        if(Random.Range(0f, 10f) > wildRandomNumber)
+        {
+            WildRotator();
+        }
     }
 
     private void Update()
