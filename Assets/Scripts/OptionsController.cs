@@ -8,10 +8,13 @@ public class OptionsController : MonoBehaviour
     private bool isReset;
 
     [SerializeField] private string mainMenuScene;
+    [SerializeField] private AudioSource buttonPressedSound;
 
 
     public void ResetButton()
     {
+        buttonPressedSound.Play();
+
         if (PlayerPrefs.HasKey("HighScore"))
         {
             isReset = true;
@@ -20,6 +23,8 @@ public class OptionsController : MonoBehaviour
 
     public void SaveButton()
     {
+        buttonPressedSound.Play();
+
         if (isReset)
         {
             PlayerPrefs.DeleteKey("HighScore");

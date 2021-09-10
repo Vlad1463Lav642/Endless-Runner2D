@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
 
     private ScoreManager scoreManager;
 
-    [SerializeField] private GameOverController gameOver;
+    [SerializeField] private GameObject gameOver;
 
     private void Start()
     {

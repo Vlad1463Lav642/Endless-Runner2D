@@ -50,6 +50,11 @@ public class PlayerController : MonoBehaviour
 
     private GameManager gameManager;
 
+    [SerializeField] private AudioSource runSound;
+    [SerializeField] private AudioSource jumpSound;
+    [SerializeField] private AudioSource deathSound;
+    [SerializeField] private AudioSource spawnSound;
+ 
     private void Start()
     {
         playerRigidbody = gameObject.GetComponent<Rigidbody2D>();
@@ -100,6 +105,11 @@ public class PlayerController : MonoBehaviour
 
         playerRigidbody.velocity = new Vector2(moveSpeed, playerRigidbody.velocity.y);
 
+        if (isGround && !runSound.isPlaying)
+        {
+            runSound.Play();
+        }
+
         if (Input.GetButtonDown("Jump"))
         {
             if (isGround)
@@ -107,6 +117,7 @@ public class PlayerController : MonoBehaviour
                 playerRigidbody.velocity = new Vector2(playerRigidbody.velocity.x, jumpForce);
                 stoppedJumping = false;
                 currentPlayerPosition = gameObject.transform.position;
+                jumpSound.Play();
             }
 
             if(!isGround && canDoubleJump)
@@ -116,6 +127,7 @@ public class PlayerController : MonoBehaviour
                 jumpTimeCount = jumpTime;
                 stoppedJumping = false;
                 canDoubleJump = false;
+                jumpSound.Play();
             }
         }
 
@@ -165,6 +177,7 @@ public class PlayerController : MonoBehaviour
             if (isSkeleton)
             {
                 gameObject.transform.position = currentPlayerPosition;
+                spawnSound.Play();
             }
             else
             {
@@ -179,6 +192,17 @@ public class PlayerController : MonoBehaviour
                 {
                     liveManager.MinusHeart();
                     gameObject.transform.position = currentPlayerPosition;
+                    spawnSound.Play();
+                }
+
+                if (deathSound.isPlaying)
+                {
+                    deathSound.Stop();
+                    deathSound.Play();
+                }
+                else
+                {
+                    deathSound.Play();
                 }
             }
         }

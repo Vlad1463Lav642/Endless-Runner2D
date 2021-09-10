@@ -92,10 +92,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3497326493090720919}
   - component: {fileID: 3497326493090720918}
-  - component: {fileID: 3497326493090720913}
+  - component: {fileID: 7963860575047084286}
   - component: {fileID: 3497326491888641623}
   m_Layer: 0
-  m_Name: TransformationScroll
+  m_Name: Scroll
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -142,7 +142,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.6030312, y: 1.5890632}
   m_EdgeRadius: 0
---- !u!114 &3497326493090720913
+--- !u!114 &7963860575047084286
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

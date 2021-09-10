@@ -107,6 +107,10 @@ MonoBehaviour:
     m_Bits: 64
   groundChecker: {fileID: 4825979420165991737}
   groundCheckerRadius: 0.1
+  runSound: {fileID: 0}
+  jumpSound: {fileID: 0}
+  deathSound: {fileID: 0}
+  spawnSound: {fileID: 0}
 --- !u!1 &4825979420165991742
 GameObject:
   m_ObjectHideFlags: 0
