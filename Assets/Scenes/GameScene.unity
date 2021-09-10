@@ -285,6 +285,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1222040056}
+  - {fileID: 1473092062}
+  - {fileID: 1234070440}
+  - {fileID: 1451675972}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -301,7 +304,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinPooler: {fileID: 1222040057}
+  crownPooler: {fileID: 1473092063}
+  ringPooler: {fileID: 1234070441}
+  diamondPooler: {fileID: 1451675973}
   distanceToCoin: 3
+  distanceToCrown: 3
+  distanceToRing: 3
+  distanceToDiamond: 3
 --- !u!1 &46409534
 GameObject:
   m_ObjectHideFlags: 0
@@ -346,7 +355,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pooledGameObject: {fileID: 8089441471730179192, guid: 43ccb6c76efb74deb9f510e51efffa6a, type: 3}
-  amount: 2
 --- !u!1 &60739691
 GameObject:
   m_ObjectHideFlags: 0
@@ -391,7 +399,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pooledGameObject: {fileID: 5847599423368367104, guid: b425833832a3a4a1e8664944115afbfa, type: 3}
-  amount: 2
 --- !u!1 &62880003
 GameObject:
   m_ObjectHideFlags: 0
@@ -987,7 +994,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pooledGameObject: {fileID: 4548445266348037841, guid: 3446e630617a84fa68e4fce5b7ef514f, type: 3}
-  amount: 2
 --- !u!1 &478798123
 GameObject:
   m_ObjectHideFlags: 0
@@ -1018,7 +1024,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pooledGameObject: {fileID: 7998017127691160152, guid: 6ce1aff3fb26b4dd2bb2df81eab1552d, type: 3}
-  amount: 2
 --- !u!4 &478798125
 Transform:
   m_ObjectHideFlags: 0
@@ -2281,7 +2286,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pooledGameObject: {fileID: 3497326493090720916, guid: 4d82f82de6f1740c6915ff7c17016aae, type: 3}
-  amount: 5
 --- !u!1 &1070418271
 GameObject:
   m_ObjectHideFlags: 0
@@ -2420,7 +2424,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pooledGameObject: {fileID: 318057406378507336, guid: c411741f3be4c4e23869a6918e7267f2, type: 3}
-  amount: 5
 --- !u!1 &1222040055
 GameObject:
   m_ObjectHideFlags: 0
@@ -2465,7 +2468,50 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pooledGameObject: {fileID: 9052444097999399810, guid: fa8a0097fc0964688adedb654939e998, type: 3}
-  amount: 15
+--- !u!1 &1234070439
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1234070440}
+  - component: {fileID: 1234070441}
+  m_Layer: 0
+  m_Name: RingPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1234070440
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1234070439}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 43004098}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1234070441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1234070439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3ae4053a66f043f4a631770a492b696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledGameObject: {fileID: 5228040159973634925, guid: 5db14ab318bdc4e5985d263c33208794, type: 3}
 --- !u!1 &1236193058
 GameObject:
   m_ObjectHideFlags: 0
@@ -2637,7 +2683,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pooledGameObject: {fileID: 5852730912194570601, guid: 190015519c39b48f187f66142b165871, type: 3}
-  amount: 2
 --- !u!1 &1259039846
 GameObject:
   m_ObjectHideFlags: 0
@@ -2792,7 +2837,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pooledGameObject: {fileID: 2842379096134675074, guid: 44e2c897fca2c40838b5c7d3c2a14b88, type: 3}
-  amount: 5
 --- !u!4 &1308576187
 Transform:
   m_ObjectHideFlags: 0
@@ -3309,6 +3353,50 @@ Transform:
   m_Father: {fileID: 733745740}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1451675971
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1451675972}
+  - component: {fileID: 1451675973}
+  m_Layer: 0
+  m_Name: DiamondPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1451675972
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451675971}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 43004098}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1451675973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451675971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3ae4053a66f043f4a631770a492b696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledGameObject: {fileID: 549664559930139557, guid: e95b1e692335141379407e93b59b2875, type: 3}
 --- !u!1 &1459589803
 GameObject:
   m_ObjectHideFlags: 0
@@ -3436,6 +3524,50 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1473092061
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1473092062}
+  - component: {fileID: 1473092063}
+  m_Layer: 0
+  m_Name: CrownPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1473092062
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1473092061}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 43004098}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1473092063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1473092061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3ae4053a66f043f4a631770a492b696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledGameObject: {fileID: 6681488864689666445, guid: 8606223b97ec946d7ad3209b29ef2b6a, type: 3}
 --- !u!1 &1486238652
 GameObject:
   m_ObjectHideFlags: 0
@@ -4173,7 +4305,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pooledGameObject: {fileID: 631052507812510114, guid: 395e65a2d06d3448299f00a11ebaa5f0, type: 3}
-  amount: 2
 --- !u!1 &1752016839
 GameObject:
   m_ObjectHideFlags: 0

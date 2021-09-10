@@ -5,7 +5,6 @@ using UnityEngine;
 public class Pooler : MonoBehaviour
 {
     [SerializeField] private GameObject pooledGameObject;
-    [SerializeField] private int amount;
 
     private List<GameObject> pooledGameObjectsList;
 
