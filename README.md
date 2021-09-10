@@ -14,4 +14,4 @@
 + Scroll - gives immortality for 15 seconds.
 + Wild - Speeds up or slows down the player.
 
-## *Unity version* - 2020.3.17f1
+## *Unity version* - 2020.3.18f1
