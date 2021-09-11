@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     private float wildMoveSpeed;
 
     private Vector2 currentPlayerPosition;
+    private bool isRespawned;
 
     private bool isSkeleton;
 
@@ -77,33 +78,36 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if(wildIndicator.GetWildRotate() && !wildSingle)
-        {
-            moveSpeed = wildMoveSpeed;
-            moveSpeed += wildForce;
-            wildSingle = true;
-        }
-        else
-        {
-            if(!wildIndicator.GetWildRotate() && !wildSingle)
-            {
-                moveSpeed = wildMoveSpeed;
-                moveSpeed -= wildForce;
-                wildSingle = true;
-            }
-        }
-
         isGround = Physics2D.OverlapCircle(groundChecker.position, groundCheckerRadius, groundMask);
 
-        if(transform.position.x > speedMilestoneCount)
+        if (!isRespawned)
         {
-            speedMilestoneCount += speedIncreaseMilestone;
-            speedIncreaseMilestone *= speedForcer;
-            moveSpeed *= speedForcer;
-            wildMoveSpeed *= speedForcer;
-        }
+            if (wildIndicator.GetWildRotate() && !wildSingle)
+            {
+                moveSpeed = wildMoveSpeed;
+                moveSpeed += wildForce;
+                wildSingle = true;
+            }
+            else
+            {
+                if (!wildIndicator.GetWildRotate() && !wildSingle)
+                {
+                    moveSpeed = wildMoveSpeed;
+                    moveSpeed -= wildForce;
+                    wildSingle = true;
+                }
+            }
 
-        playerRigidbody.velocity = new Vector2(moveSpeed, playerRigidbody.velocity.y);
+            if (transform.position.x > speedMilestoneCount)
+            {
+                speedMilestoneCount += speedIncreaseMilestone;
+                speedIncreaseMilestone *= speedForcer;
+                moveSpeed *= speedForcer;
+                wildMoveSpeed *= speedForcer;
+            }
+
+            playerRigidbody.velocity = new Vector2(moveSpeed, playerRigidbody.velocity.y);
+        }
 
         if (isGround && !runSound.isPlaying)
         {
@@ -116,7 +120,6 @@ public class PlayerController : MonoBehaviour
             {
                 playerRigidbody.velocity = new Vector2(playerRigidbody.velocity.x, jumpForce);
                 stoppedJumping = false;
-                currentPlayerPosition = gameObject.transform.position;
                 jumpSound.Play();
             }
 
@@ -150,6 +153,8 @@ public class PlayerController : MonoBehaviour
         {
             jumpTimeCount = jumpTime;
             canDoubleJump = true;
+            currentPlayerPosition = gameObject.transform.position;
+            isRespawned = false;
         }
 
         playerAnimator.SetFloat("Speed", playerRigidbody.velocity.x);
@@ -178,6 +183,8 @@ public class PlayerController : MonoBehaviour
             {
                 gameObject.transform.position = currentPlayerPosition;
                 spawnSound.Play();
+
+                isRespawned = true;
             }
             else
             {
@@ -193,6 +200,8 @@ public class PlayerController : MonoBehaviour
                     liveManager.MinusHeart();
                     gameObject.transform.position = currentPlayerPosition;
                     spawnSound.Play();
+
+                    isRespawned = true;
                 }
 
                 if (deathSound.isPlaying)
@@ -222,5 +231,10 @@ public class PlayerController : MonoBehaviour
     public void RunWild()
     {
         wildSingle = false;
+    }
+
+    public bool GetIsGround()
+    {
+        return isGround;
     }
 }
