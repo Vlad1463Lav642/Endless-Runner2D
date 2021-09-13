@@ -6,9 +6,12 @@ public class LivesPickupScript : MonoBehaviour
 {
     private LiveManager liveManager;
 
+    private AudioSource heartSound;
+
     private void Start()
     {
         liveManager = FindObjectOfType<LiveManager>();
+        heartSound = GameObject.Find("BonusSound").GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -17,6 +20,16 @@ public class LivesPickupScript : MonoBehaviour
         {
             liveManager.PlusHeart();
             gameObject.SetActive(false);
+
+            if (heartSound.isPlaying)
+            {
+                heartSound.Stop();
+                heartSound.Play();
+            }
+            else
+            {
+                heartSound.Play();
+            }
         }
     }
 }

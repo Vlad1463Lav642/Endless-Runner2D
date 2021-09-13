@@ -13,13 +13,17 @@ public class ScoreManager : MonoBehaviour
 
     [SerializeField] private float pointsPerSecond;
 
+    private string currentPlayer;
+
     [SerializeField] private bool scoreIncreasing;
 
     private void Start()
     {
-        if(PlayerPrefs.HasKey("HighScore"))
+        currentPlayer = PlayerPrefs.GetString("CurrentPlayer");
+
+        if(PlayerPrefs.HasKey(currentPlayer) && currentPlayer != null)
         {
-            highScoreCount = PlayerPrefs.GetFloat("HighScore");
+            highScoreCount = PlayerPrefs.GetFloat(currentPlayer);
         }
     }
 
@@ -33,7 +37,8 @@ public class ScoreManager : MonoBehaviour
         if(scoreCount > highScoreCount)
         {
             highScoreCount = scoreCount;
-            PlayerPrefs.SetFloat("HighScore", highScoreCount);
+            Debug.Log(currentPlayer);
+            PlayerPrefs.SetFloat(currentPlayer, highScoreCount);
         }
 
         scoreText.text = "Score: " + Mathf.Round(scoreCount);

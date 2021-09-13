@@ -14,11 +14,11 @@ public class GameManager : MonoBehaviour
 
     private ScoreManager scoreManager;
 
-    [SerializeField] private GameOverController gameOver;
+    [SerializeField] private GameObject gameOver;
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        player = FindObjectOfType<PlayerController>();
 
         platformStartPoint = platformGenerator.position;
         playerStartPoint = player.transform.position;
@@ -49,6 +49,8 @@ public class GameManager : MonoBehaviour
         player.transform.position = playerStartPoint;
         platformGenerator.position = platformStartPoint;
         player.gameObject.SetActive(true);
+
+        player.SetTransformSkeleton(false);
 
         scoreManager.SetScoreCount(0);
         scoreManager.SetScoreIncreasing(true);
