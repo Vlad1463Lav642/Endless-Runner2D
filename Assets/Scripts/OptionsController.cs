@@ -10,12 +10,18 @@ public class OptionsController : MonoBehaviour
     [SerializeField] private string mainMenuScene;
     [SerializeField] private AudioSource buttonPressedSound;
 
+    private string currentPlayer;
+
+    private void Start()
+    {
+        currentPlayer = PlayerPrefs.GetString("CurrentPlayer");
+    }
 
     public void ResetButton()
     {
         buttonPressedSound.Play();
 
-        if (PlayerPrefs.HasKey("HighScore"))
+        if (PlayerPrefs.HasKey(currentPlayer) && currentPlayer != null)
         {
             isReset = true;
         }
@@ -27,7 +33,7 @@ public class OptionsController : MonoBehaviour
 
         if (isReset)
         {
-            PlayerPrefs.DeleteKey("HighScore");
+            PlayerPrefs.SetFloat(currentPlayer, 0f);
         }
 
         SceneManager.LoadScene(mainMenuScene);

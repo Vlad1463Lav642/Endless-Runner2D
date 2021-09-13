@@ -160,18 +160,15 @@ public class PlayerController : MonoBehaviour
         playerAnimator.SetFloat("Speed", playerRigidbody.velocity.x);
         playerAnimator.SetBool("IsGrounded", isGround);
 
-        if (isSkeleton)
+        if (isSkeleton && skeletonTimeCount > 0)
         {
-            if(skeletonTimeCount > 0)
-            {
-                skeletonTimeCount -= Time.deltaTime;
-            }
-            else
-            {
-                isSkeleton = false;
-                gameObject.GetComponentInChildren<SpriteRenderer>().sprite = defaultPlayerSprite;
-                gameObject.GetComponentInChildren<Animator>().runtimeAnimatorController = defaultPlayerAnimator;
-            }
+            skeletonTimeCount -= Time.deltaTime;      
+        }
+        else
+        {
+            isSkeleton = false;
+            gameObject.GetComponentInChildren<SpriteRenderer>().sprite = defaultPlayerSprite;
+            gameObject.GetComponentInChildren<Animator>().runtimeAnimatorController = defaultPlayerAnimator;
         }
     }
 
