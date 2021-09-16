@@ -1,9 +1,8 @@
 # Endless Runner2D
 
-![Image1](https://user-images.githubusercontent.com/89180498/133583467-e6b0d9a6-f736-46f8-b7d2-8ba6369f8521.png)
-
-
 > This game is an endless runner where the player needs to jump on platforms and collect hidden treasures.
+
+![Image1](https://user-images.githubusercontent.com/89180498/133583467-e6b0d9a6-f736-46f8-b7d2-8ba6369f8521.png)
 
 ## Controls:
 
