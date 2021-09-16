@@ -1,8 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Обеспечивает управление кнопками в настройках игры.
+/// </summary>
 public class OptionsController : MonoBehaviour
 {
     private bool isReset;
@@ -17,6 +18,9 @@ public class OptionsController : MonoBehaviour
         currentPlayer = PlayerPrefs.GetString("CurrentPlayer");
     }
 
+    /// <summary>
+    /// Сброс рекорда.
+    /// </summary>
     public void ResetButton()
     {
         buttonPressedSound.Play();
@@ -26,7 +30,10 @@ public class OptionsController : MonoBehaviour
             isReset = true;
         }
     }
-
+    
+    /// <summary>
+    /// Сохранение изменений.
+    /// </summary>
     public void SaveButton()
     {
         buttonPressedSound.Play();

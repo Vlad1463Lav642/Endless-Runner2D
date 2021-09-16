@@ -1,7 +1,9 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Обеспечивает спавн различных объектов.
+/// </summary>
 public class Pooler : MonoBehaviour
 {
     [SerializeField] private GameObject pooledGameObject;
@@ -30,6 +32,10 @@ public class Pooler : MonoBehaviour
         return obj;
     }
 
+    /// <summary>
+    /// Возвращает объект спавна.
+    /// </summary>
+    /// <returns>Объект спавна.</returns>
     public GameObject GetPooledGameObject()
     {
         return pooledGameObject;

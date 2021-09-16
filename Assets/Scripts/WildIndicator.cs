@@ -1,8 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Обеспечивает управление индикатором направления ветра.
+/// </summary>
 public class WildIndicator : MonoBehaviour
 {
     [SerializeField] private Sprite arrowLeft;
@@ -44,6 +45,9 @@ public class WildIndicator : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Меняет направление ветра.
+    /// </summary>
     public void WildRotator()
     {
         wildRotation = !wildRotation;
@@ -60,6 +64,10 @@ public class WildIndicator : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Возвращает текущее направление ветра.
+    /// </summary>
+    /// <returns>Направление ветра.</returns>
     public bool GetWildRotate()
     {
         return wildRotation;

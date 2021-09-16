@@ -1,8 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Обеспечивает управление кнопками во время игры.
+/// </summary>
 public class MenuController : MonoBehaviour
 {
     [SerializeField] private GameObject pauseMenu;
@@ -16,6 +17,9 @@ public class MenuController : MonoBehaviour
         pauseMenu.SetActive(false);
     }
 
+    /// <summary>
+    /// Остановка игры.
+    /// </summary>
     public void PauseGame()
     {
         buttonPressedSound.Play();
@@ -24,6 +28,9 @@ public class MenuController : MonoBehaviour
         pauseMenu.SetActive(true);
     }
 
+    /// <summary>
+    /// Возврат в игру.
+    /// </summary>
     public void ResumeGame()
     {
         buttonPressedSound.Play();
@@ -32,6 +39,9 @@ public class MenuController : MonoBehaviour
         pauseMenu.SetActive(false);
     }
 
+    /// <summary>
+    /// Перезапуск игры.
+    /// </summary>
     public void RestartGame()
     {
         buttonPressedSound.Play();
@@ -45,6 +55,9 @@ public class MenuController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Выход в главное меню.
+    /// </summary>
     public void ExitToMainMenu()
     {
         buttonPressedSound.Play();

@@ -1,7 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Обеспечивает управление камерой.
+/// </summary>
 public class CameraController : MonoBehaviour
 {
     private PlayerController player;
@@ -10,7 +11,7 @@ public class CameraController : MonoBehaviour
     private float distanceX;
     private float distanceY;
 
-    [SerializeField] private Transform catcher;
+    [SerializeField] private Transform catcher; //Смертельная область под платформами.
 
     private void Start()
     {
@@ -23,8 +24,8 @@ public class CameraController : MonoBehaviour
         distanceX = player.transform.position.x - lastPosition.x;
         distanceY = player.transform.position.y - lastPosition.y;
 
-        transform.position = new Vector3(transform.position.x + distanceX, transform.position.y + distanceY, transform.position.z);
-        catcher.position = new Vector3(catcher.position.x, catcher.position.y - distanceY, catcher.position.z);
+        transform.position = new Vector3(transform.position.x + distanceX, transform.position.y + distanceY, transform.position.z); //Перемещение камеры.
+        catcher.position = new Vector3(catcher.position.x, catcher.position.y - distanceY, catcher.position.z); //Сдвиг смертельной области по Y, если игрок поднялся выше или спустился.
 
         lastPosition = player.transform.position;
     }

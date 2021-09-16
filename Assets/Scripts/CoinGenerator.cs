@@ -1,19 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Генерирует сокровища.
+/// </summary>
 public class CoinGenerator : MonoBehaviour
 {
-    [SerializeField] private Pooler coinPooler;
-    [SerializeField] private Pooler crownPooler;
-    [SerializeField] private Pooler ringPooler;
-    [SerializeField] private Pooler diamondPooler;
+    [SerializeField] private Pooler coinPooler; //Спавнер монет.
+    [SerializeField] private Pooler crownPooler; //Спавнер корон.
+    [SerializeField] private Pooler ringPooler; //Спавнер колец.
+    [SerializeField] private Pooler diamondPooler; //Спавнер алмазов.
 
-    [SerializeField] private float distanceToCoin;
-    [SerializeField] private float distanceToCrown;
-    [SerializeField] private float distanceToRing;
-    [SerializeField] private float distanceToDiamond;
+    [SerializeField] private float distanceToCoin; //Дистанция между монетами.
+    [SerializeField] private float distanceToCrown; //Дистанция между коронами.
+    [SerializeField] private float distanceToRing; //Дистанция между кольцами.
+    [SerializeField] private float distanceToDiamond; //Дистанция между алмазами.
 
+    /// <summary>
+    /// Обеспечивает спавн сокровищ.
+    /// </summary>
+    /// <param name="startPosition">Позиция спавна объекта.</param>
     public void SpawnCoins(Vector3 startPosition)
     {
         int randomNumber = Mathf.RoundToInt(Random.Range(0f, 3f));

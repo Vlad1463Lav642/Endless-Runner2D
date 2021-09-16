@@ -1,7 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Обеспечивает подбор жизней.
+/// </summary>
 public class LivesPickupScript : MonoBehaviour
 {
     private LiveManager liveManager;

@@ -1,7 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Скрипт обеспечивает подбор сокровищ.
+/// </summary>
 public class CoinsPickupScript : MonoBehaviour
 {
     [SerializeField] private int scoreToGive;

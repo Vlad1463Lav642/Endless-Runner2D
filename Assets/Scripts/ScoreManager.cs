@@ -1,8 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Обеспечивает управление счетом игрока.
+/// </summary>
 public class ScoreManager : MonoBehaviour
 {
     [SerializeField] private Text scoreText;
@@ -45,6 +46,10 @@ public class ScoreManager : MonoBehaviour
         highScoreText.text = "High Score: " + Mathf.Round(highScoreCount);
     }
 
+    /// <summary>
+    /// Добавляет определенное количество очков к счету.
+    /// </summary>
+    /// <param name="pointsToAdd">Количество очков для добавления.</param>
     public void AddScore(int pointsToAdd)
     {
         scoreCount += pointsToAdd;
@@ -55,11 +60,19 @@ public class ScoreManager : MonoBehaviour
         scoreIncreasing = score;
     }
 
+    /// <summary>
+    /// Устанавливает определенное количество очков у игрока.
+    /// </summary>
+    /// <param name="count">Количество очков.</param>
     public void SetScoreCount(float count)
     {
         scoreCount = count;
     }
 
+    /// <summary>
+    /// Возвращает количество очков игрока.
+    /// </summary>
+    /// <returns>Количество очков.</returns>
     public float GetScoreCount()
     {
         return scoreCount;

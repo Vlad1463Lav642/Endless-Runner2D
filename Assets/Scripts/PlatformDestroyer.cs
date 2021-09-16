@@ -1,7 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Скрывает платформы оставшиеся позади игрока.
+/// </summary>
 public class PlatformDestroyer : MonoBehaviour
 {
     private GameObject platformDestroyerPoint;

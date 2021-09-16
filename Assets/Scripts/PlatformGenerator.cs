@@ -1,7 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Обеспечивает генерацию платформ по пути движения игрока.
+/// </summary>
 public class PlatformGenerator : MonoBehaviour
 {
     [SerializeField] private Transform generationPoint;

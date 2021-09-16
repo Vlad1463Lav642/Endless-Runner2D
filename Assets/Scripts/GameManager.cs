@@ -1,7 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Обеспечивает управление состоянием игры.
+/// </summary>
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private Transform platformGenerator;
@@ -35,6 +36,9 @@ public class GameManager : MonoBehaviour
         gameOver.gameObject.SetActive(true);
     }
 
+    /// <summary>
+    /// Сброс игры.
+    /// </summary>
     public void ResetGame()
     {
         gameOver.gameObject.SetActive(false);

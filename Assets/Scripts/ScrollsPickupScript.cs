@@ -1,7 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Обеспечивает подбор свитков.
+/// </summary>
 public class ScrollsPickupScript : MonoBehaviour
 {
     [SerializeField] private Sprite toPlayerTransformation;
