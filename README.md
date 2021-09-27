@@ -13,12 +13,12 @@
 
 ## FAQ
 
-+ Coin - adds 100 points to the score.
-+ Crown - adds 300 points to the score.
-+ Ring - adds 200 points to the score.
-+ Diamond - adds 500 points to the score.
-+ Heart - adds 1 life to the player.
-+ Scroll - gives immortality for 15 seconds.
++ Coin - Adds 100 points to the score.
++ Crown - Adds 300 points to the score.
++ Ring - Adds 200 points to the score.
++ Diamond - Adds 500 points to the score.
++ Heart - Adds 1 life to the player.
++ Scroll - Gives immortality for 15 seconds.
 + Wild - Speeds up or slows down the player.
 
 ---
