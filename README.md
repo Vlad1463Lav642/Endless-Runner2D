@@ -30,7 +30,7 @@
 + ___UI___
   + [assetstore.unity.com](https://assetstore.unity.com/packages/2d/gui/icons/fantastic-ui-starter-pack-123733)
 + ___Fonts___
-  + [assetstore.unity.com](https://fonts.google.com/specimen/Press+Start+2P?query=press+start)
+  + [fonts.google.com](https://fonts.google.com/specimen/Press+Start+2P?query=press+start)
 
 ---
 
