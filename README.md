@@ -7,12 +7,12 @@
 ---
 
 ## Controls:
-
+```
 + Space - Jump.
-
+```
 
 ## FAQ
-
+```
 + Coin - adds 100 points to the score.
 + Crown - adds 300 points to the score.
 + Ring - adds 200 points to the score.
@@ -20,16 +20,17 @@
 + Heart - adds 1 life to the player.
 + Scroll - gives immortality for 15 seconds.
 + Wild - Speeds up or slows down the player.
+```
 
 ---
 
 ## Used Resources
 
-+ Sprites
++ ___Sprites___
   + https://assetstore.unity.com/packages/2d/free-2d-mega-pack-177430
-+ UI
++ ___UI___
   + https://assetstore.unity.com/packages/2d/gui/icons/fantastic-ui-starter-pack-123733
-+ Fonts
++ ___Fonts___
   + https://fonts.google.com/specimen/Press+Start+2P?query=press+start
 
 ---
