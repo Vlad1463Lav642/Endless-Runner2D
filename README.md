@@ -19,4 +19,13 @@
 + Scroll - gives immortality for 15 seconds.
 + Wild - Speeds up or slows down the player.
 
+## Used Resources
+
++ Sprites
+++ https://assetstore.unity.com/packages/2d/free-2d-mega-pack-177430
++ UI
+++ https://assetstore.unity.com/packages/2d/gui/icons/fantastic-ui-starter-pack-123733
++ Fonts
+++ https://fonts.google.com/specimen/Press+Start+2P?query=press+start
+
 ## *Unity version* - 2020.3.18f1
